@@ -34,12 +34,194 @@ Hint: not required but helpful to run STAR with these parameters:
 
 Student response
 <br>
+Results from FastQC
+
+```{r,echo= FALSE}
+paths = c("/Users/biankaursul/Workspace/Spring 2020/BST282/Homework_2020/HW2/data/part5/sq_W.png","/Users/biankaursul/Workspace/Spring 2020/BST282/Homework_2020/HW2/data/part5/sq_X.png", "/Users/biankaursul/Workspace/Spring 2020/BST282/Homework_2020/HW2/data/part5/sq_Y.png","/Users/biankaursul/Workspace/Spring 2020/BST282/Homework_2020/HW2/data/part5/sq_Z.png", "/Users/biankaursul/Workspace/Spring 2020/BST282/Homework_2020/HW2/data/part5/sequence_cont_W.png", "/Users/biankaursul/Workspace/Spring 2020/BST282/Homework_2020/HW2/data/part5/sequence_cont_X.png","/Users/biankaursul/Workspace/Spring 2020/BST282/Homework_2020/HW2/data/part5/sequence_cont_Y.png","/Users/biankaursul/Workspace/Spring 2020/BST282/Homework_2020/HW2/data/part5/sequence_cont_Z.png","/Users/biankaursul/Workspace/Spring 2020/BST282/Homework_2020/HW2/data/part5/gc_cont_W.png","/Users/biankaursul/Workspace/Spring 2020/BST282/Homework_2020/HW2/data/part5/gc_cont_X.png","/Users/biankaursul/Workspace/Spring 2020/BST282/Homework_2020/HW2/data/part5/gc_cont_Y.png","/Users/biankaursul/Workspace/Spring 2020/BST282/Homework_2020/HW2/data/part5/gc_cont_Z.png")
+knitr::include_graphics(paths)
+```
+
+Quality scores, Sequence Content and GC distribution plot of the four libraries are displayed above (with order: W, X, Y, Z). We can see that in the sequence content plot that library Z has imbalanced base composition and failed this session. Also in the GC distribution plot, library Z's GC count distribution deviates from the theoretical curve.
+
+Results from STAR:
+```{r eval=FALSE}
+=====================================RunW==================================
+                                Started job on |	Feb 23 03:31:22
+                             Started mapping on |	Feb 23 03:33:04
+                                    Finished on |	Feb 23 03:34:50
+       Mapping speed, Million of reads per hour |	101.89
+
+                          Number of input reads |	3000000
+                      Average input read length |	50
+                                    UNIQUE READS:
+                   Uniquely mapped reads number |	2022651
+                        Uniquely mapped reads % |	67.42%
+                          Average mapped length |	49.82
+                       Number of splices: Total |	236342
+            Number of splices: Annotated (sjdb) |	229910
+                       Number of splices: GT/AG |	234284
+                       Number of splices: GC/AG |	1510
+                       Number of splices: AT/AC |	140
+               Number of splices: Non-canonical |	408
+                      Mismatch rate per base, % |	0.29%
+                         Deletion rate per base |	0.01%
+                        Deletion average length |	1.29
+                        Insertion rate per base |	0.01%
+                       Insertion average length |	1.17
+                             MULTI-MAPPING READS:
+        Number of reads mapped to multiple loci |	727449
+             % of reads mapped to multiple loci |	24.25%
+        Number of reads mapped to too many loci |	13729
+             % of reads mapped to too many loci |	0.46%
+                                  UNMAPPED READS:
+       % of reads unmapped: too many mismatches |	0.00%
+                 % of reads unmapped: too short |	7.65%
+                     % of reads unmapped: other |	0.23%
+                                  CHIMERIC READS:
+                       Number of chimeric reads |	0
+                            % of chimeric reads |	0.00%
+
+
+=====================================RunX==================================
+                                 Started job on |	Feb 23 03:35:27
+                             Started mapping on |	Feb 23 03:35:44
+                                    Finished on |	Feb 23 03:37:20
+       Mapping speed, Million of reads per hour |	112.50
+
+                          Number of input reads |	3000000
+                      Average input read length |	50
+                                    UNIQUE READS:
+                   Uniquely mapped reads number |	2311502
+                        Uniquely mapped reads % |	77.05%
+                          Average mapped length |	49.83
+                       Number of splices: Total |	324261
+            Number of splices: Annotated (sjdb) |	316057
+                       Number of splices: GT/AG |	321601
+                       Number of splices: GC/AG |	1963
+                       Number of splices: AT/AC |	184
+               Number of splices: Non-canonical |	513
+                      Mismatch rate per base, % |	0.25%
+                         Deletion rate per base |	0.00%
+                        Deletion average length |	1.44
+                        Insertion rate per base |	0.01%
+                       Insertion average length |	1.20
+                             MULTI-MAPPING READS:
+        Number of reads mapped to multiple loci |	617312
+             % of reads mapped to multiple loci |	20.58%
+        Number of reads mapped to too many loci |	14722
+             % of reads mapped to too many loci |	0.49%
+                                  UNMAPPED READS:
+       % of reads unmapped: too many mismatches |	0.00%
+                 % of reads unmapped: too short |	1.65%
+                     % of reads unmapped: other |	0.23%
+                                  CHIMERIC READS:
+                       Number of chimeric reads |	0
+                            % of chimeric reads |	0.00%
+                               
+=====================================RunY==================================
+                                 Started job on |	Feb 23 03:37:56
+                             Started mapping on |	Feb 23 03:38:13
+                                    Finished on |	Feb 23 03:39:42
+       Mapping speed, Million of reads per hour |	121.35
+
+                          Number of input reads |	3000000
+                      Average input read length |	50
+                                    UNIQUE READS:
+                   Uniquely mapped reads number |	2514248
+                        Uniquely mapped reads % |	83.81%
+                          Average mapped length |	49.82
+                       Number of splices: Total |	335593
+            Number of splices: Annotated (sjdb) |	327213
+                       Number of splices: GT/AG |	332661
+                       Number of splices: GC/AG |	2145
+                       Number of splices: AT/AC |	260
+               Number of splices: Non-canonical |	527
+                      Mismatch rate per base, % |	0.24%
+                         Deletion rate per base |	0.00%
+                        Deletion average length |	1.45
+                        Insertion rate per base |	0.01%
+                       Insertion average length |	1.20
+                             MULTI-MAPPING READS:
+        Number of reads mapped to multiple loci |	433378
+             % of reads mapped to multiple loci |	14.45%
+        Number of reads mapped to too many loci |	12249
+             % of reads mapped to too many loci |	0.41%
+                                  UNMAPPED READS:
+       % of reads unmapped: too many mismatches |	0.00%
+                 % of reads unmapped: too short |	1.06%
+                     % of reads unmapped: other |	0.27%
+                                  CHIMERIC READS:
+                       Number of chimeric reads |	0
+                            % of chimeric reads |	0.00%
+                               
+=====================================RunZ==================================
+                                 Started job on |	Feb 23 03:40:15
+                             Started mapping on |	Feb 23 03:40:32
+                                    Finished on |	Feb 23 03:44:04
+       Mapping speed, Million of reads per hour |	50.94
+
+                          Number of input reads |	3000000
+                      Average input read length |	50
+                                    UNIQUE READS:
+                   Uniquely mapped reads number |	442168
+                        Uniquely mapped reads % |	14.74%
+                          Average mapped length |	48.10
+                       Number of splices: Total |	168784
+            Number of splices: Annotated (sjdb) |	168479
+                       Number of splices: GT/AG |	168728
+                       Number of splices: GC/AG |	20
+                       Number of splices: AT/AC |	3
+               Number of splices: Non-canonical |	33
+                      Mismatch rate per base, % |	9.05%
+                         Deletion rate per base |	0.00%
+                        Deletion average length |	2.20
+                        Insertion rate per base |	0.00%
+                       Insertion average length |	1.53
+                             MULTI-MAPPING READS:
+        Number of reads mapped to multiple loci |	572719
+             % of reads mapped to multiple loci |	19.09%
+        Number of reads mapped to too many loci |	825
+             % of reads mapped to too many loci |	0.03%
+                                  UNMAPPED READS:
+       % of reads unmapped: too many mismatches |	0.00%
+                 % of reads unmapped: too short |	66.14%
+                     % of reads unmapped: other |	0.00%
+                                  CHIMERIC READS:
+                       Number of chimeric reads |	0
+                            % of chimeric reads |	0.00%
+```
+
+The uniquely mapped reads in library W, X, and Y are reasonable (67.42%, 77.05% and 83.81%), whereas the uniquely mapped reads in library Z is quite low (14.74%) and the mismatch rate per base is much higher (9.05%) than other libraries. Also there is a high percentage of reads unmapped (66.14%) in library Z. Library Y performs pretty well according to the STAR result, with the highest uniquely mapped reads percentage and lowest mismatch rate.
+
+RSeQC results:
+```{r eval = FALSE}
+=====================================RunW==================================
+Bam_file	TIN(mean)	TIN(median)	TIN(stdev)
+runW_sorted.bam	34.94160281773132	31.60982628740766	22.94113216430839
+
+=====================================RunX==================================
+Bam_file	TIN(mean)	TIN(median)	TIN(stdev)
+runX_sorted.bam	40.85057373281427	39.527069505651056	24.110339363400527
+
+=====================================RunY==================================
+Bam_file	TIN(mean)	TIN(median)	TIN(stdev)
+runY_sorted.bam	43.267014161444344	43.30489990415091	24.294023616775483
+
+=====================================RunZ==================================
+Bam_file	TIN(mean)	TIN(median)	TIN(stdev)
+runZ_sorted.bam	16.006341411923454	14.884227029485709	14.7148665428431
+```
+
+According to RSeQC, Library Z has the lowest Tin(mean) (16.006) and Library Y has the highest Tin(mean) (43.267).
+Based on the results from FastQC, RSeQC and STAR, we can conclude that library Y is the best library and library Z is the worst library.
 
 ### Problem I.2 (0.5pt; graduate students only)
 
 **Your collaborator recalls that one of her samples was left on the bench for a couple of days before the full RNA-seq library was processed. Using the metrics from the question above, can you identify this sample? Provide your rationale.**
 
 Student response
+
+I suggest that this sample is sample Z because it has the worst quality out of the four. It is mainly because that leaving RNA samples for a couple of days will result in the degredation of RNA samples. The degredation of this sample is demonstrated by the abnormal GC distribution and low tin score.
 
 -----
 
@@ -56,7 +238,32 @@ index: /n/stat115/2020/HW2/salmon_hg38_index
 ```
 
 Student response
-<br>
+```{r engine = 'bash', eval =FALSE, echo = TRUE}
+#!/bin/bash
+#SBATCH -n 1 # Number of cores requested
+#SBATCH -N 1 # Ensure that all cores are on one machine
+#SBATCH -t 20 # Runtime in minutes
+#SBATCH -p serial_requeue # Partition to submit to
+#SBATCH --mem=8G # Memory in GB (see also --mem-per-cpu)
+
+module load salmon/0.12.0-fasrc01
+index=/n/stat115/2020/HW2/salmon_hg38_index
+path=/n/stat115/2020/HW2/raw_data/
+files=("runW" "runX" "runY" "runZ")
+for file in ${files[@]}; do
+    salmon quant -l A -i $index -r ${path}$file.fastq.gz --validateMappings -o transcript_${file}
+    cd /n/home06/stat115u20076/transcript_${file}
+    sort -n -k4 quant.sf > sorted_quant.sf
+    cd ..
+done
+```
+
+Transcript and gene with highest expression in the four different libraries:
+runW: ENST00000361851	207	10.766	64997.019628	4108.748
+runX: ENST00000361851	207	10.766	41996.698910	2796.513
+runY: ENST00000361851	207	10.766	26495.853255	1370.680
+runZ: ENST00000444587	307	58.716	323475.701112	12106.790
+
 
 ### Problem II.2 (1pt)
 **Report the relative speed of Salmon and STAR for the analyses of these four samples. Comment on your results based on the lecture material.**
@@ -68,11 +275,54 @@ e.g. time sleep 2
 
 Student response
 <br>
+[stat115u20076@boslogin01 hw2]$ head -3 runW_star_outputLog.final.out 
+                                 Started job on |	Feb 23 03:31:22
+                             Started mapping on |	Feb 23 03:33:04
+                                    Finished on |	Feb 23 03:34:50
+[stat115u20076@boslogin01 hw2]$ head -3 runX_star_outputLog.final.out
+                                 Started job on |	Feb 23 03:35:27
+                             Started mapping on |	Feb 23 03:35:44
+                                    Finished on |	Feb 23 03:37:20
+[stat115u20076@boslogin01 hw2]$ head -3 runY_star_outputLog.final.out 
+                                 Started job on |	Feb 23 03:37:56
+                             Started mapping on |	Feb 23 03:38:13
+                                    Finished on |	Feb 23 03:39:42
+[stat115u20076@boslogin01 hw2]$ head -3 runZ_star_outputLog.final.out 
+                                 Started job on |	Feb 23 03:40:15
+                             Started mapping on |	Feb 23 03:40:32
+                                    Finished on |	Feb 23 03:44:04
+
+Total time cost: Approximately 11 minutes in total
+
+Speed of Salmon for the analyses of the for samples:
+RunW Start on: [2020-02-24 21:01:00.765]
+RunW End on: [2020-02-24 21:01:17.969]'
+RunX Start on: [2020-02-24 21:01:20.313]
+RunX End on: [2020-02-24 21:01:39.428]
+RunY Start on: [2020-02-24 21:01:42.842]
+RunY End on: [2020-02-24 21:02:03.786]
+RunZ Start on: [2020-02-24 21:02:07.507]
+RunZ End on: [2020-02-24 21:02:17.130]
+
+Total time cost: Approximately 1 minute.
+
+Salmon pseudoalignment takes much less time than star alignment. This is mainly because that pseudoalignment does not align base-to-base. Instead, it directly compare the raw sequence reads with transcript sequences and then used to quanitfy transcript abundance, which greatly improve the speed.
 
 ### Problem II.3 (1pt; graduate students only)
 **Plot the relationship between effective length, normalized read counts, TPM, and FPKM for runX from the Salmon output. Comment on the relative utility of each metric when analyzing gene expression data.** 
 
 Student response
+
+![](/Users/biankaursul/Workspace/Spring 2020/BST282/Homework_2020/HW2/code/part2_3.png){width=50%} 
+
+Effective length: Effective length accounts for the number of possible start positions for a read or fragment within that transcript and is used for the calculation of TPM and FPKM.
+
+Normalized read counts is used for the calculation of FPKM, while it doesn't taken into account of gene length.
+
+TPM and FPKM are similar except for the order of operation: in TPM we normalize for gene length first, and then normalize for sequencing depth second. In TPM, the sum of all TPMs in each sample are the same, making it easier to compare the proportion of reads that mapped to a gene in each sample. In contrast, with FPKM, the sum of the normalized reads in each sample may be different, and this makes it harder to compare samples directly.
+
+TPM is thus more commonly used in analyzing gene expression data.
+
 
 -----
 
@@ -90,10 +340,11 @@ column: <organism>_<tissue>_<batch> sample identifier (e.g. human_adipose_3)
 **Perform a principle component analysis of the samples using the top 5,000 most variable genes as features. Indicate the species, tissue, and batch per sample plot. Do the results support the conclusions of the original paper? Do the results suggest the presence of a batch effect? **
 
 ```{r import_piii, include=TRUE, echo=TRUE, eval = TRUE}
-
+library(stringr)
+library(pheatmap)
+library(ggplot2)
 # Import processed raw counts
 counts <- readRDS("../data/part3_counts.rds")
-
 # Perform a log TPM normalization
 log2tpm <- sapply(1:dim(counts)[2], function(idx){
   log2((counts[,idx]/sum(counts[,idx]) * 1000000) + 1)
@@ -101,44 +352,153 @@ log2tpm <- sapply(1:dim(counts)[2], function(idx){
 colnames(log2tpm) <- colnames(counts)
 
 # Continue analysis here.
+sample_data =str_split_fixed(colnames(log2tpm), "_", 3)
+data.frame(sample_data)
+sample = data.frame(str_split_fixed(colnames(log2tpm), "_", 3))
+colnames(sample) = c("Species","Tissue","Batch")
+
+rowVar <- function(x, ...){
+  rowSums((x-rowMeans(x,...))^2,...)/(dim(x)[2]-1)
+}
+threshold = sort(rowVar(log2tpm), decreasing = TRUE)[5000]
+log2tpm_variable = log2tpm[rowVar(log2tpm) >= threshold,]
+#head(log2tpm_variable)
+
+# PCA on top 5,000 most variable genes
+pheatmap(cor(log2tpm_variable))
+pca_df = data.frame(sample, prcomp(log2tpm_variable, scale = TRUE, center = TRUE)$rotation)
+
+ggplot(pca_df, aes(x=PC2, y=PC3, color = factor(Tissue), shape= factor(Batch), size = factor(Species))) + geom_point()
 ```
 
 Student response
 <br>
+The result supports the conclusion of the paper since in the PCA plot, genes in different tissue from the same species sit closer to each other than genes in the same tissue from different species. However, this plot suggests the possible batch effect because genes with same batch number(shape) tends to locate closer to each other, forming clusters. Also, batch number is correlated with species. We cannot determine whether the previously stated conclusion is due to batch effect or not.
 
 ### Problem III.2 (1pt)
 **Run COMBAT on the samples to remove the batch effect. Visualize the results using a similar principle component analysis as the question above. Provide evidence that the batch effects are successfully adjusted. Do these results change the primary interpretation of the results?**
 
+```{r echo=TRUE,eval=TRUE}
+library(sva)
+pca_df$Batch
+combat_dat <- ComBat(log2tpm_variable, pca_df$Batch, par.prior = TRUE)
+pheatmap(cor(combat_dat))
+
+pca_combat_df <- data.frame(sample, 
+                            prcomp(combat_dat, scale = TRUE, center = TRUE)$rotation
+                            )
+head(pca_combat_df)
+ggplot(pca_combat_df, aes(x=PC2, y=PC3, color = factor(Tissue), shape= factor(Batch), size = factor(Species))) + geom_point()
+```
 Student response
 <br>
+Batch effect is removed because in the plot after correction, genes with different batch number are now distributed evenly in space rather than gather in clusters. Further evidence supports that batch effect is removed. In the heatmap, the correlation between gene expression in the same batch from different tissues is lower than before batch effect correction. The primary interpretation is however altered. We can observe that now data points with the same color sit closer to each other now regardless of marker size(species). Therefore, we might suspect that after batch effect correction, the true situation is gene expression in the same tissue in different species are more similar.
 
 ### Problem III.3 (1pts)
 **Run DESeq2 adjusting for the batch effect to identify differentially-expressed genes between the lung and adipose tissue. Report the number of statistically-significant genes as well as whether they are more highly expressed in either adipose tissue or lung tissue.**
 
+```{r echo=TRUE, eval=TRUE}
+library(DESeq2)
+library(apeglm)
+ddsMat = DESeqDataSetFromMatrix(countData = counts,
+                                colData = sample,
+                                design = ~ Species + Tissue + Batch)
+
+ddsMat = DESeq(ddsMat)
+rdf <- results(ddsMat,contrast = c("Tissue", "lung","adipose"))
+head(rdf)
+
+# Count statistically significant genes with adjusted p-value < 0.01
+sum(rdf$padj < 0.01, na.rm = TRUE)
+
+# Determine whether these genes are more highly expressed in adpose tissue or lung tissue.
+sum(rdf$padj < 0.01 & rdf$log2FoldChange > 0, na.rm=TRUE)
+sum(rdf$padj < 0.01 & rdf$log2FoldChange <= 0, na.rm=TRUE)
+
+dds_shrink <- lfcShrink(ddsMat, coef="Tissue_lung_vs_adipose", type="apeglm")
+library(dplyr)
+rds_df <- data.frame(dds_shrink, gene = rownames(dds_shrink))
+head(rds_df %>% arrange(desc(log2FoldChange)))
+log2tpm_variable[c('Scgb3a2_SCGB3A2','Cldn2_CLDN2'),]
+# log2fc < 0 => upregulated in adipose
+# log2fc > 0 => upregulated in lung
+# Among the statistically significant genes, 268 w/ log2fc >0 and 399 w/ log2fc <0)
+stat_sig_genes = (rds_df %>% filter(padj < 0.01))$gene
+```
 Student response
 <br>
+There are 667 significant differentially expressed genes, 268 of which upregulated in lung tissue and 399 upregulated in adipose.
+The significant de genes are more highly expressed in adipose.
 
 ### Problem III.4 (1pts)
 **Identify the top 5 most differentially expressed genes that are overexpressed in each of the tissues. Comment on the biological relevance of these. It may be useful to use data from the GTEx consortium when interpreting your result.**
 
+```{r}
+rds_df %>% arrange(padj) %>% head(5)
+
+```
 ```
 GTEx link: https://www.gtexportal.org/home
 ```
 Student response
 <br>
+Top differentially expressed genes are Lamp3, Cldn18, Slc6a14, Cldn2 and Rtkn2. 
+Up-regulated genes in lung tissue is associated with positive log2 fold change, and vice versa.
+LAMP3 is the abrreviation for lysosomal associated membrane protein 3. During human fetal development, between weeks 10 and 20, LAMP3 is highly expressed in the lungs, while in normal adult tissue cells LAMP3 is expressed in the lungs, appendix, testis and lymph nodes. According to GTEx consortium report, LAMP3 has a medium expression level around TPM 60.09. LAMP3 has a positive log2 fold change, which indicates it's up-regulated in lung tissue, consistent with the result from GTEx.
+CLDN18 gene encodes a member of the claudin family- integral membrane proteins and components of tight junction strands. CLDN18 is biasedly expressed in stomach (TPM 391) and lung tissues (TPM 140.5), consistent with the positive log2 fold change.
+SLC6A14 encodes a member of the solute carrier family 6. Members of this family are sodium and chloride dependent neurotransmitter transporters. SLC6A14 is biasedly expressed in lung (TPM 8.798), minor salivary gland (TPM 29.57), consistent with the postive log2 fold change.
+CLDN2 has enhanced expression in brain, gallbladder, kidney, liver, seminal vesicle based on combined data from HPA, GTEX and FANTOM5, and has higher expression level in adipose than in lung according to GTEX, consistent with the negative log fold change.
+RTKN has biased expression in lung (RPKM 32.1) and testis (RPKM 2.2) according to HPA RNA expression database, consistent with a positive log2 fold change score.
+
 
 ### Problem III.5 (1pts)
 **Visualize the differential gene expression values by making a volcano and an MA plot to summarize the differences between the two tissues. Be sure to use the `lfcShrink` function to get more robust estimates of the fold-changes for genes. **
 
 Student response
 <br>
+```{r, fig.height=5,fig.width=5}
+library(EnhancedVolcano)
+plotMA(dds_shrink, ylim = c(-5, 5))
+EnhancedVolcano(dds_shrink,
+                lab = rownames(dds_shrink),
+                x = 'log2FoldChange',
+                y = 'padj',
+                xlim =c(-10,10),
+                ylim = c(0,15))
+```
 
 ### Problem III.6 (1pts; graduate students only)
 **Rerun differential gene expression analyses without accounting for the batch effect. Compare the number of differentially expressed genes and anecdotes of top differentially expressed genes. Are the numbers of differentially expressed genes before/after the batch effect consistent with what you would have expected? Comment on the biological relevance of the top genes.** 
 
-Student response
+```{r}
+ddsMat_wBatch = DESeqDataSetFromMatrix(countData = counts,
+                                       colData = sample,
+                                       design = ~ Species + Tissue)
+ddsMat_wBatch = DESeq(ddsMat_wBatch)
+rdf_wbatch <- results(ddsMat_wBatch, contrast = c("Tissue", "lung", "adipose"))
+sum(rdf_wbatch$padj < 0.01, na.rm = TRUE)
+sum(rdf_wbatch$padj < 0.01 & rdf_wbatch$log2FoldChange > 0, na.rm=TRUE)
+sum(rdf_wbatch$padj < 0.01 & rdf_wbatch$log2FoldChange <= 0, na.rm=TRUE)
+dds_wbatch_shrink <- lfcShrink(ddsMat_wBatch, coef="Tissue_lung_vs_adipose", type="apeglm")
+rds_wbatch_df = data.frame(dds_wbatch_shrink,gene = rownames(dds_wbatch_shrink))
+rds_wbatch_df %>% arrange(padj) %>% head(5)
 
+
+```
+
+Student response
+73 genes with positive fold change => high in lung
+171 genes with negative fold change => high in adipose
+The statistically significant genes are more highly expressed in adipose.
+Top differentially expressed genes are IL8, RTKN2, LAMP3, Clorf116, and LEP.
+There are some overlap between the significant genes without batch effect correction and those obtained with batch effect correction. Genes found significant in this run that were not significant previously include IL8, C1orf116 and LEP.
+Il8 is a chemokine produced by macrophages and other cell types such as epithelial cells, airway smooth muscle cells and endothelial cells. In mouse, this gene is called Cxcl15_IL8 and has restricted expression toward lung adult (RPKM 125.0).
+C1orf116 has biased expression in lung (RPKM 46.8), esophagus (RPKM 46.0) and 10 other tissues and expression in adipose was not detected.
+LEP is a common gene encoding a protein that is secreted by white adipocytes into the circulation and plays a major role in the regulation of energy homeostasis. LEP is found enriched in adipose tissue, breast and placenta.
+The top significant differentially expressed genes are biologically relevant to the tissue where these genes are upregulated and the relative expression in lung and adipose tissue in this study is consistent with the results from online gene database such as NCBI gene db and GTEX consortium.
+There are less statistically significant differentially expressed genes without batch effect correction. It is consistent with our expectation because we are expecting genes from the same tissue in mouse and human to be similar and genes from different tissues to be differentially expressed regardless of species. Since in the original manuscript, the potential batch effect confounds the relationship between expression of gene, types of tissue and species, they reached the conclusion that the expression for many sets of genes was found to be more similar in different tissues within the same species than between species. We are expecting that after batch effect removal, there should be more differentially expressed gene in different tissues within the same species.
 -----
+
 
 <br><br>
 
@@ -151,12 +511,30 @@ While the previous question identified genes that were differentially expressed 
 **Run the up and down regulated genes computed in problem III.3 separately on DAVID (http://david.abcc.ncifcrf.gov/) to see whether these genes are enriched in specific biological process, pathways, etc. For example, consider reporting the enrichments for the top 100 genes in the KEGG pathways. If you were to summarize the results in a paper, how would you describe the systematic biologial features that are different between these tissues? Your analysis should comment on the stability of enriched pathways (with at least 2 different input gene list sizes) and attempt to interpret the results in the differential physiological properties of the tissues.**
 
 Student response
+```{r,eval=FALSE}
+gene_list = str_split_fixed(stat_sig_genes,'_',2)[,2]
+sub_gene_list = gene_list[1:200]
+write.table(gene_list,"stat_sig_genes.txt",sep=";",row.names = FALSE, quote = FALSE)
+write.table(sub_gene_list,"stat_sig_genes_sub.txt",sep=";",row.names = FALSE, quote = FALSE)
+```
+
+```{r}
+part4_path = c("/Users/biankaursul/Workspace/Spring 2020/BST282/Homework_2020/HW2/data/KEGG_PATHWAY1.png","/Users/biankaursul/Workspace/Spring 2020/BST282/Homework_2020/HW2/data/KEGG_PATHWAY2.png","/Users/biankaursul/Workspace/Spring 2020/BST282/Homework_2020/HW2/data/GOBP1.png","/Users/biankaursul/Workspace/Spring 2020/BST282/Homework_2020/HW2/data/GOBP2.png")
+knitr::include_graphics(part4_path)
+```
+For stability analysis, DAVID annotations for both the full significant gene list and a subset of the genes are included.
+As observed from the KEGG pathway annotations of the statistically significant genes computed in PartIII by DAVID, there are two major categories of pathways enriched with these genes: pathways related to metabolism and pathways related to cell-matrix adhesion. The pathways related to lipid and glucose metabolism include AMPK signaling pathway,	PPAR signaling pathway,	Fructose and mannose metabolism, Insulin signaling pathway and etc. The remaining pathways are mainly responsible for providing physical and mechanical support for specific tissues for the proper functions of the organs, including Focal adhesion pathway and ECM-receptor interaction. We further investigate the annotated the biological process under gene ontology and found similar results. The up/down regulated genes in part III are enriched in multiple biological process including cell adhesion, extracellular matrix organization,	glucose metabolic process,	cellular lipid metabolic process and fatty acid homeostasis. This result is consistent with what we are expecting because these specific genes enriched pathways and biological processes are closely related to the function of the tissues we're investigating. For example, adipose tissue has responsibility for lipid metabolism and glucose homeostasis. It is expected that genes regulating lipid and/or glucose homeostasis would have a high expression level in adipose tissue. Also, we have noticed that there are some genes in our gene list enriched in pathways related to cel-matrix adhesion, which is also expected since the architecture of lung tissue is determined by the intricate pulmonary extracellular matrix (ECM). The formation of and dynamic changes within ECM requires certain genes regulating cell-matrix adhesion and the formation of connective tissue such as elastin and collagen to be expressed at a high level in lung tissues to support a special structure for air transmission. We also noticed that the gene list is related to more metabolic pathways than other pathways, which is consistent with the conclusion in Part III that the significant genes are more highly differentially expressed in adipose tissues. The results from the full significant gene list is similar to the results from the subset of genes except that less pathways related to genes upregulated in lungs were reported, suggesting that the result is reasonably stable. Therefore, we can conclude that differentially expressed genes in specific pathways support the differential physiological properties of the tissues. 
+
+
 
 ### Problem IV.2 (0.5pts)
 
 **Describe in at least 3 but no more than 7 sentences the methodological differences between how approaches like DAVID and approaches like GSEA work in identifying enriched pathways from RNA-seq data.**
 
 Student response
+
+Approaches like DAVID determines the overlaps between user-supplied gene lists and the curated databases and searching for overlaps with very small probability if the overlaps occur purely due to chance. The provided genes list should be pre-selected to be statistically significant. In DAVID methodologies, a significance values such as FDR or FWER need to be specified and changing the significance level will alter the enrichment result. DAVID like methods use statistical tests including hypergeometric, Fisher's exact and Chi-squared tests. In contrast, approaches like GSEA can use the whole gene list instead of a set of statistically significant genes, and uses every point in the list. For example, in GSEA we rank all the genes by differential expression, plot the cumulative fraction function of the genome-wide gene list and the user-supplied gene lists and test the separation of the two curves by Kolmogorov-Smirnov test. Therefore, in GSEA, we need to define the set before looking at the data and evaluate significance as a whole, contrary to examine a pre-selected significant gene list in DAVID methodology.
+
 
 ### Problem IV.3 (1pt; graduate students only)
 **Run Gene Set Enrichment analysis (http://www.broadinstitute.org/gsea/index.jsp) using the summary statistics from problem III.3. What are the gene sets or experiments that best capture the differential expression data between these two cell types? Comment on the biological relevance of the results and compare them to the results produced from the DAVID analysis.**
@@ -167,6 +545,36 @@ is, in my hands, easier to use than the original java distribution of gsea
 ```
 
 Student response
+```{r}
+library(fgsea)
+devtools::install_github("mw201608/msigdb")
+library("msigdb")
+rank = rds_df %>% arrange(log2FoldChange) %>% select(gene, log2FoldChange) %>% mutate(hum_gene = str_split_fixed(gene,'_',2)[,2]) %>% select(hum_gene, log2FoldChange)
+rank = setNames(rank$log2FoldChange,rank$hum_gene)
+pathways = gmtPathways("/Users/biankaursul/Workspace/Spring 2020/BST282/Homework_2020/HW2/data/h.all.v7.0.symbols.gmt")
+fgseaRes <- fgsea(pathways, rank, minSize=15, maxSize=500, nperm=1000)
+# A positive NES will indicate that genes in set S will be mostly represented at the top of your list L. a negative NES will indicate that the genes in the set S will be mostly at the bottom of your list L.
+head(fgseaRes[order(padj,pval),] %>% filter(NES >= 0 ), n=5) 
+head(fgseaRes[order(padj,pval),] %>% filter(NES <= 0), n=5) 
+
+topUp <- fgseaRes[order(padj,pval),] %>% 
+    filter(NES >= 0) %>% 
+    top_n(10, wt=-padj)
+topDown <- fgseaRes[order(padj,pval),] %>% 
+    filter(NES < 0) %>% 
+    top_n(10, wt=-padj)
+topPathways <- bind_rows(topUp, topDown) %>% 
+    arrange(-NES)
+
+ggplot(topPathways, aes(x=reorder(pathway,NES), y=NES)) + 
+  geom_bar(stat='identity', width=.5)  +
+  scale_fill_manual(name="NES") +
+  labs(subtitle="Rank of Hallmark Pathways NES", 
+       title= "Diverging Bars") + 
+  coord_flip()
+
+```
+The top 20 significant Hallmark Pathways with most positive NES and most negative NES are ploted in the diverging bars. The ten significant pathways with positive normalized enrichment scores are more involved in lung related biological processes, and the ten pathways with negative NES are more involved in adipose related processes. For example, genes in the hallmark adipogenesis pathways (eg. FABP4, ADIPOQ, PPARG) are more expressed in adipose tissue according to GTEx and adipogenesis- the formation of adipocytes is clearly relevant to adipose tissues. Other pathways (NES < 0) including cholesterol homeostasis, estrogen response, bile acid metabolism and xenobiotic metabolism are specific to adipose tissue and close to the adipose relevant pathways annotated by DAVID. On the other end, the pathways on the top of the chart, including inflamatory response, KRAS signaling, IL6_JAK_STAT3 signaling, are more specific to lung tissue. For example, IL6/JAK/STAT3 signaling pathway suppresses lung cancer initiation through maintaining lung homeostasis and mutations in KRAS signaling pathway is correlated with lung cancers. Thus, upregulated genes in lung are more likely to be found in these pathways. In conclusion, the gene sets obtained from GSEA captured the differential expression of genes in the two tissues pretty well. Compared to DAVID analysis, GSEA was able to identify more significant results in both up-regulated and down-regulated directions and since it's using the whole dataset, it is possibly better able to detect a set of genes experiencing subtle differential expressions than DAVID analysis.
 
 -----
 
@@ -179,10 +587,35 @@ Student response
 **RSeQC on RNA-seq generates many output files. One such file is called geneBodyCoverage.r which contains normalized reads mapped to each % of gene / transcript body. Suppose that we want to visualize all 12 samples from a recent RNA-seq library together to quickly perform quality control. These data files are present in the `part5` folder. Write a python program to extract the values and name from each file. The same script should then draw the gene body coverage for all the samples (3 rows x 4 cols) in one figure. We provide an example with 3 x 2 samples in one figure. Include your code and final figure in your report.**
 
 Student response
+```{r engine="python", echo=TRUE, eval=FALSE}
+import matplotlib.pyplot as plt
+import string
+Char = []
+for i in range(ord('A'), ord('N')):
+    Char.append(chr(i))
+Char.remove('I')
+files = [f'../data/part5/{char}.geneBodyCoverage.r' for char in Char]
 
+coverage = {}
+for char,file in zip(Char,files):
+    f = open(file,"r")
+    raw_read = f.read()
+    coverage[char] = [float(i) for i in raw_read.split()[2].rstrip(')').lstrip('c(').split(',')]   
+
+fig, ax = plt.subplots(3,4, figsize = (20,15))
+for (i,item) in enumerate(coverage):
+    ax.ravel()[i].plot(coverage[item])
+    ax.ravel()[i].set_title(item)
+    ax.ravel()[i].set_xlabel("Gene Body Percentile (5'-3')")
+    ax.ravel()[i].set_ylabel("Coverage")
+plt.tight_layout()
+plt.savefig("Part5 Output")
+```
 -----
 
-<br><br>
+<br>
+![](/Users/biankaursul/Workspace/Spring 2020/BST282/Homework_2020/HW2/code/Part5 Output.png)
+<br>
 
 # Part VI: Batch effects and classification in the literature
 
@@ -192,7 +625,11 @@ In a recent manuscript (published September 2019), Zhou et al. describe a modifi
 **In the main manuscript (see `1_original.pdf`), what bioinformatics methods were used in conjuction with the SILVER-seq protocol to predict patient status? Name the methods and describe their purpose (list at least 3).**
 
 Student response
+1. Standard RNA-seq: The purpose of carrying out standard RNA-seq is to obtain the exRNA expression profiles and compare it with SILVER-seq obtained exRNA expression profiles and then assess the variability of SILVER-seq measurements.
 
+2. Principal Component Analysis: PCA is used to determine whether different types of RNAs exhibit the same power of differentiating cancer and normal samples. They first did a baseline PCA and found possible separation of cancer and noncancer samples by some subspaces. They then proceeded to test whether the degrees of cancer-normal separation are similar across different types of RNAs by another PCA analysis.
+
+3. Differential Expression: The purpose is to test for differential expression of exRNAs between the serum samples collected from cancer and normal donors. The fold change and false discovery rate (FDR) for every exRNA were computed for that purpose. there were more exRNAs with higher expression in cancer (cancer-upregulated) than those with lower expression in cancer (cancer-downregulated) as compared to normal samples.
 <br>
 
 -----
@@ -202,16 +639,19 @@ The next questions are for graduate students only. In 3-5 sentences each, answer
 **Briefly summarize the Hartl and Gao response (see `2_Hartl_response.pdf`). Specifically, what evidence do Hartl and Gao offer that the interpretation of the original manuscript may be confounded by a batch effect? If you were the bioinformatician analyzing the original data, what steps, if any, could you take to eliminate the batch effect?**
 
 Student response
+The Hartl and Gao response suggest that potential batch effect weakens the stated results of the original paper. The reanalysis of the raw data demonstrated a perfect confound between read length and cancer status, and the PCA components separating cancer from normal tissues is correlated with alignment metrics. Therefore, they suspect that serum from individuals with cancer was processed separately from serum from individuals without cancer and they futher suggested that the separation observed by PCA analysis was likely due to batch effect rather than cancer status. If I were the bioinformatician analyzing the original data, I would apply methods like ComBat to correct for potential batch effect.
 
 ### Problem VI.3 (0.5 pts; graduate students only)
 **Summarize the response to Hartl (see `3_response_to_Hartl.pdf`). Specifically, how do the original authors argue that there is "a lack of between batch differences"? Do you find their rebuttal convincing?**
 
 Student response
+They responded that read-length difference does not cause a significant batch effect because 1)the absolute difference of mismatch rates between the 50bp and 75bp reads of cancer and normal samples is within acceptable range and under the typically used threshold of the mapping software. 2) the distributions of the measured exRNA levels was similar between a cancer sample and a normal sample, indicating that every sample contains a similar proportion of highly expressed exRNAs. 3) the pairwise differences of the normal samples in exRNA levels nearly completely overlapped with the between-batch pairwise differences. I think their rebuttal convincing because in their original paper, they used different methods including standard rna-seq for comparison and control. Also their rebuttal is based on literature and factual comparisons of exRNA levels within and between the 2 batches.
 
 ### Problem VI.4 (0.5 pts; graduate students only)
 **Design a modified version of the study that utilizes both proper experimental setup and computational tools discussed in this lab/homework that would ameloirate the potential batch effect in assessing the efficacy of SILVER-seq. Comment specifically on batch design and analytical methods. Assume that you want to test the same number of samples (~130) but no more than 10 samples can be processed per batch.**
 
 Student response
+I would modify the original experiment by Zhou etc. by randomizing serum samples of normal and cancer tissues into multiple batch and for each sample record the batch number correspondingly. Before conducting PCA analysis, I would add one step adjusting for batch effect (e.g. ComBat) with the pre-recorded batch number column. After adjusting for batch effect, we can follow the remaining steps of the original study design and find out if there exists distinguishable separation in principal components between cancer and normal samples.
 
 ### Problem VI.5 (0.0 pts; graduate students only)
 **After reading the primary manuscript and both responses, how do you interpret the efficacy of SILVER-seq as a tool for cancer diagnostics/prediction? What remaining questions do you think need to be answered before this technology could be confidently used with patients?**
